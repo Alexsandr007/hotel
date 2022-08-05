@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block menu %}
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li class="active"><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>{% trans 'Наши комнаты' %}</h2>
+                        <div class="bt-option">
+                            <a href="./home.html">{% trans 'Главная' %}</a>
+                            <span>{% trans 'комнаты' %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Rooms Section Begin -->
+    <section class="rooms-section spad">
+        <div class="container">
+            <div class="row">
+                {% for room in rooms_list %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="{{ room.img.url }}" alt="">
+                        <div class="ri-text">
+                            <h4>{{ room.name }}</h4>
+                            <h3>{{ room.cost }}$<span>/{% trans 'За сутки' %}</span></h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Размер' %}:</td>
+                                        <td>{{ room.size }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Емкость' %}:</td>
+                                        <td>{% trans 'Максимальная точность' %} {{ room.capacity }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Кровать' %}:</td>
+                                        <td>{{ room.bed }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Сервисы' %}:</td>
+
+                                        <td>{% for service in room.services.all|slice:"2" %}
+                                            {{ service.name }},
+                                            {% endfor %}<a>...</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="{{ room.get_absolute_url }}" class="primary-btn">{% trans 'Подробнее' %}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-lg-12">
+                    {% if page_obj.has_next and page_obj.previous_page_number %}
+                    <div class="room-pagination">
+                        <a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-long-arrow-left"></i>{% trans 'Предыдущий' %}</a>
+                        <a href="?page={{ page_obj.next_page_number }}">Next<i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                    {% elif page_obj.has_next %}
+                    <div class="room-pagination">
+                        <a href="?page={{ page_obj.next_page_number }}">Next<i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                    {% elif page_obj.previous_page_number %}
+                    <div class="room-pagination">
+                        <a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-long-arrow-left"></i>{% trans 'Предыдущий' %}</a>
+                    </div>
+                    {% endif %}
+                </div>
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            </div>
+        </div>
+    </section>
+    <!-- Rooms Section End -->
+
+{% endblock %}

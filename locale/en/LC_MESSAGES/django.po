@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-25 15:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\templates\about-us.html:5 .\templates\about-us.html:23
+#: .\templates\base.html:80 .\templates\contact.html:6
+#: .\templates\contact_room.html:6 .\templates\index.html:5
+#: .\templates\news.html:6 .\templates\news_details.html:6
+#: .\templates\reservation.html:6 .\templates\room_details.html:6
+#: .\templates\room_details.html:23 .\templates\rooms.html:6
+#: .\templates\rooms.html:25
+msgid "Главная"
+msgstr "Home"
+
+#: .\templates\about-us.html:6 .\templates\base.html:81
+#: .\templates\contact.html:7 .\templates\contact_room.html:7
+#: .\templates\index.html:6 .\templates\news.html:7
+#: .\templates\news_details.html:7 .\templates\reservation.html:7
+#: .\templates\room_details.html:7 .\templates\rooms.html:7
+msgid "Комнаты"
+msgstr "Rooms"
+
+#: .\templates\about-us.html:7 .\templates\about-us.html:24 .\templates\about-us.html:21
+#: .\templates\base.html:82 .\templates\contact.html:8
+#: .\templates\contact_room.html:8 .\templates\index.html:7
+#: .\templates\index.html:50 .\templates\news.html:8
+#: .\templates\news_details.html:8 .\templates\reservation.html:8
+#: .\templates\room_details.html:8 .\templates\rooms.html:8
+msgid "О нас"
+msgstr "About us"
+
+#: .\templates\about-us.html:8 .\templates\base.html:83
+#: .\templates\contact.html:9 .\templates\contact_room.html:9
+#: .\templates\index.html:8 .\templates\news.html:9
+#: .\templates\news_details.html:9 .\templates\reservation.html:9
+#: .\templates\room_details.html:9 .\templates\rooms.html:9
+msgid "Новости"
+msgstr "News"
+
+#: .\templates\about-us.html:9 .\templates\base.html:84
+#: .\templates\contact.html:10 .\templates\contact_room.html:10
+#: .\templates\index.html:9 .\templates\index.html:108
+#: .\templates\news.html:10
+#  .\templates\news.html:24 .\templates\news.html:25
+#: .\templates\news_details.html:10 .\templates\reservation.html:10
+#: .\templates\room_details.html:10 .\templates\rooms.html:10
+#: .\templates\rooms.html:83
+msgid "Контакты"
+msgstr "Contact"
+
+#: .\templates\about-us.html:40
+msgid "Добро пожаловать в отель"
+msgstr "Welcome to the hotel"
+
+#: .\templates\about-us.html:41
+msgid ""
+"Этот отель, построенный в 1910 году в период Прекрасной эпохи, расположен в "
+"центре город Париж, откуда легко добраться до туристических "
+"достопримечательностей города. Предлагает со вкусомдекорированные комнаты."
+msgstr ""
+"This Belle Epoque hotel, built in 1910, is located in"
+"the city center of Paris with easy access to tourist attractions"
+"City attractions. Offers tastefully decorated rooms."
+
+#: .\templates\about-us.html:46
+#, python-format
+msgid "Скидка 20%% на проживание"
+msgstr "Discount 20 %% on accommodation"
+
+#: .\templates\about-us.html:47
+msgid "Бесплатный ежедневный завтрак"
+msgstr "Free daily breakfast"
+
+#: .\templates\about-us.html:48
+msgid "3 стирки в день"
+msgstr "3 washes a day"
+
+#: .\templates\about-us.html:49
+msgid "Бесплатный вай фай"
+msgstr "Free wi-fi"
+
+#: .\templates\about-us.html:50
+#, python-format
+msgid "Скидка 20%% на сервисы от Ф и Б"
+msgstr "Discount 20 %% on services from F and B"
+
+#: .\templates\about-us.html:60
+msgid "Ресторанные сервисы"
+msgstr "Restaurant services"
+
+#: .\templates\about-us.html:67
+msgid "Поездки и путешествия"
+msgstr "Travel and travel"
+
+#: .\templates\about-us.html:74
+msgid "События и вечеринки"
+msgstr "Events and parties"
+
+#: .\templates\about-us.html:90
+msgid "Откройте для себя наш отель и услуги"
+msgstr "Discover our hotel and services"
+
+#: .\templates\about-us.html:91
+msgid "Сейчас сезон ураганов, но мы едем на остров Хилтон-Хед"
+msgstr "It's hurricane season now, but we're driving to Hilton Head Island"
+
+#: .\templates\about-us.html:107
+msgid "Наша галерея"
+msgstr "Our gallery"
+
+#: .\templates\about-us.html:108
+msgid "Откройте для себя нашу работу"
+msgstr "Discover our work"
+
+#: .\templates\about-us.html:116 .\templates\about-us.html:123
+#: .\templates\about-us.html:130 .\templates\about-us.html:139
+msgid "Номер люкс"
+msgstr "Suite"
+
+#: .\templates\base.html:76 .\templates\base.html:120
+msgid "Просмотреть сейчас"
+msgstr "View Now"
+
+#: .\templates\base.html:195
+msgid "Мы вдохновляем и привлекаем миллионы путешественников"
+msgstr "We inspire and attract millions of travelers"
+
+#: .\templates\base.html:195
+msgid "на 90 местных сайтах"
+msgstr "on 90 local sites"
+
+#: .\templates\base.html:207
+msgid "Связаться с нами"
+msgstr "Contact us"
+
+#: .\templates\base.html:211
+msgid "856 Cordia Extension Apt. 356, Лейк, США"
+msgstr "856 Cordia Extension Apt. 356, Lake, USA"
+
+#: .\templates\base.html:217
+msgid "New last"
+msgstr "Environmental policy"
+
+#: .\templates\base.html:218
+msgid "Получайте последние обновления и предложения."
+msgstr "Get the latest updates and offers."
+
+#: .\templates\base.html:233
+msgid "Контакт"
+msgstr "Contact"
+
+#: .\templates\base.html:234
+msgid "Условия эксплуатации"
+msgstr "Operating conditions"
+
+#: .\templates\base.html:235
+msgid "Конфиденциальность"
+msgstr "Confidentiality"
+
+#: .\templates\base.html:236
+msgid "Политика, касающаяся окружающей среды"
+msgstr "Environmental policy"
+
+#: .\templates\base.html:241
+msgid "Все права защищены. Этот шаблон сделан с"
+msgstr "All rights reserved | This template is made with"
+
+#: .\templates\base.html:241
+msgid "авторское право"
+msgstr "Copyright"
+
+#: .\templates\base.html:241
+msgid "Библиотека цветов"
+msgstr "Colorlib"
+
+#: .\templates\contact.html:22 .\templates\contact_room.html:22
+msgid "Контактная информация"
+msgstr "Contact Information"
+
+#: .\templates\contact.html:28 .\templates\contact_room.html:28
+msgid "Адресс"
+msgstr "Address"
+
+#: .\templates\contact.html:32 .\templates\contact_room.html:32
+msgid "Телефон"
+msgstr "Telephone"
+
+#: .\templates\contact.html:36 .\templates\contact_room.html:36
+#: .\templates\news_details.html:107
+msgid "Емаил"
+msgstr "Email"
+
+#: .\templates\contact.html:40 .\templates\contact_room.html:40
+msgid "Факс"
+msgstr "Fax"
+
+#: .\templates\contact.html:52 .\templates\contact_room.html:53
+msgid "Ваше имя"
+msgstr "Your name"
+
+#: .\templates\contact.html:55 .\templates\contact_room.html:56
+msgid "Ваш емаил"
+msgstr "Your email"
+
+#: .\templates\contact.html:58
+msgid "Ваше сообщение"
+msgstr "your message"
+
+#: .\templates\contact.html:59 .\templates\contact_room.html:60
+msgid "Нажмите сейчас"
+msgstr "Click here"
+
+#: .\templates\contact_room.html:29
+msgid "856 Cordia Extension Apt. 356, Lake, US"
+msgstr "856 Cordia Extension Apt. 356, Lake, US"
+
+#: .\templates\contact_room.html:59
+msgid "Укажите дату бронирования номера"
+msgstr "Specify the date of booking the room"
+
+#: .\templates\index.html:22
+msgid "Сона А Роскошный Отель"
+msgstr "Sona A Luxury Hotel"
+
+#: .\templates\index.html:23
+msgid ""
+"Вот лучшие сайты бронирования отелей, включая рекомендации для международных "
+"путешествия и поиск недорогих гостиничных номеров."
+msgstr ""
+"Here are the best hotel booking sites including recommendations for international"
+"traveling and finding inexpensive hotel rooms."
+
+#: .\templates\index.html:24
+msgid "Откройте для себя сейчас"
+msgstr "Discover now"
+
+#: .\templates\index.html:29
+msgid "Бронирование вашего отеля"
+msgstr "Booking your hotel"
+
+#: .\templates\index.html:30
+msgid "Проверять наличие"
+msgstr "Check availability"
+
+#: .\templates\index.html:51
+msgid "Межконтинентальный Лос-Анджелес"
+msgstr "Intercontinental Los Angeles"
+
+#: .\templates\index.html:51
+msgid "Вестлейк Отель"
+msgstr "Westlake Hotel"
+
+#: .\templates\index.html:53
+msgid ""
+"Sona.com - ведущий сайт онлайн-размещения. Мы увлечены путешествовать. "
+"Каждый день мы вдохновляем и привлекаем миллионы путешественников на 90 "
+"местных сайтах в 41 стране. языков."
+msgstr ""
+"Sona.com is the leading online placement site. We're passionate about travel."
+"Every day we inspire and attract 90 millions of travelers."
+"local sites in 41 countries. languages."
+#: .\templates\index.html:54
+msgid ""
+"Итак, когда дело доходит до бронирования идеального отеля, аренды на время "
+"отпуска, курорта, квартира, гостевой дом или домик на дереве, мы вам поможем."
+msgstr ""
+"So, when it comes to booking the perfect hotel, lease on time."
+"vacation, resort, apartment, guest house or tree house, we will help you."
+#: .\templates\index.html:55
+msgid "Читать дальше"
+msgstr "Read more"
+
+#: .\templates\index.html:125 .\templates\room_details.html:90
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: .\templates\index.html:126
+msgid "Что говорят клиенты?"
+msgstr "What do customers say?"
+
+#: .\templates\index.html:134 .\templates\index.html:148
+msgid ""
+"После того, как строительный проект занял больше времени, чем ожидалось, мой "
+"муж, моя дочь и я нужно место, чтобы остаться на несколько ночей. Как жители "
+"Чикаго, мы много знаем о наших город, район и типы доступных вариантов "
+"жилья, и нам очень нравится наш отдых в отеле \"Сона\"."
+msgstr ""
+"After the construction project took longer than expected, my"
+"Husband, my daughter and I need a place to stay for a few nights. As residents"
+"Chicago, we know a lot about our city, neighborhood and the types of options available."
+"accommodation, and we really enjoy our stay at the Sona Hotel."
+
+#: .\templates\index.html:143 .\templates\index.html:157
+msgid "Александр Васкес"
+msgstr "Alexander Vasquez"
+
+#: .\templates\index.html:174
+msgid "Новости отеля"
+msgstr "Hotel news"
+
+#: .\templates\index.html:175
+msgid "О блоге и событиях"
+msgstr "About blog and events"
+
+#: .\templates\news.html:22
+msgid "Блог"
+msgstr "Blog"
+
+#: .\templates\news.html:51
+msgid "Загрузить больше"
+msgstr "Load more"
+
+#: .\templates\news_details.html:22
+msgid "Путешествия поездки и кемпинг"
+msgstr "Travel trips and camping"
+
+#: .\templates\news_details.html:23
+msgid ""
+"Cdc выпускает уведомление о состоянии здоровья для путешественников в США из "
+"Hon"
+msgstr ""
+"Cdc Releases Health Notice For US Travelers From"
+"Hon"
+#: .\templates\news_details.html:25 .\templates\news_details.html:139
+#: .\templates\news_details.html:148 .\templates\news_details.html:157
+msgid "Апрель"
+msgstr "April"
+
+#: .\templates\news_details.html:26
+msgid "Керри Джонс"
+msgstr "Kerry Jones"
+
+#: .\templates\news_details.html:69
+msgid "Комментарии"
+msgstr "Comments "
+
+#: .\templates\news_details.html:98
+msgid "Написать комментарий"
+msgstr "Write a comment"
+
+#: .\templates\news_details.html:104 .\templates\room_details.html:110
+msgid "Имя"
+msgstr "Name"
+
+#: .\templates\news_details.html:110
+msgid "Сообщение"
+msgstr "Message"
+
+#: .\templates\news_details.html:129
+msgid "Рекомендации"
+msgstr "Recommendations"
+
+#: .\templates\news_details.html:137
+msgid "Путешествие"
+msgstr "Travel"
+
+#: .\templates\news_details.html:138
+msgid "Tremblant в канаде"
+msgstr "Tremblant in canada"
+
+#: .\templates\news_details.html:146
+msgid "Походы"
+msgstr "Hiking"
+
+#: .\templates\news_details.html:147
+msgid "Выбор статического каравана"
+msgstr "Static caravan selection"
+
+#: .\templates\news_details.html:155
+msgid "События"
+msgstr "Developments"
+
+#: .\templates\news_details.html:156
+msgid "Каньён Коопера"
+msgstr "Coopera Canyon"
+
+#: .\templates\room_details.html:21
+msgid "Все комнаты"
+msgstr "All rooms"
+
+#: .\templates\room_details.html:53
+msgid "Сутки"
+msgstr "Day"
+
+#: .\templates\room_details.html:57 .\templates\rooms.html:49 .\templates\index.html:89
+msgid "Размер"
+msgstr "The size"
+
+#: .\templates\room_details.html:23
+msgid "Наши комнаты"
+msgstr "Our rooms"
+
+#: .\templates\room_details.html:61 .\templates\rooms.html:53 .\templates\index.html:93
+msgid "Емкость"
+msgstr "Capacity"
+
+#: .\templates\room_details.html:62
+msgid "Кол-во людей"
+msgstr "Number of people"
+
+#: .\templates\room_details.html:65 .\templates\rooms.html:57 .\templates\index.html:97
+msgid "Кровать"
+msgstr "Bed"
+
+#: .\templates\room_details.html:69 .\templates\rooms.html:61 .\templates\index.html:101
+msgid "Сервисы"
+msgstr "Services"
+
+#: .\templates\room_details.html:79
+msgid "Ваш рейтинг"
+msgstr "Your rating"
+
+#: .\templates\room_details.html:105
+msgid "Добавить отзыв"
+msgstr "Add a review"
+
+#: .\templates\room_details.html:117
+msgid "Ваш отзыв"
+msgstr "your feedback"
+
+#: .\templates\room_details.html:118 .\templates\room_details.html:129
+msgid "Нажмите сюда"
+msgstr "Click here"
+
+#: .\templates\room_details.html:126
+msgid "Ваша резервация"
+msgstr "Your reservation"
+
+#: .\templates\rooms.html:26
+msgid "комнаты"
+msgstr "rooms"
+
+#: .\templates\rooms.html:45 .\templates\index.html:85
+msgid "За сутки"
+msgstr "Per day"
+
+#: .\templates\rooms.html:54
+msgid "Максимальная точность"
+msgstr "Maximum precision"
+
+#: .\templates\rooms.html:66
+msgid "Подробнее"
+msgstr "More details"
+
+#: .\templates\rooms.html:74
+msgid "Предыдущий"
+msgstr "Previous"

@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block menu %}
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li class="active"><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+    <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>{% trans 'Все комнаты' %}</h2>
+                        <div class="bt-option">
+                            <a href="./home.html">{% trans 'Главная' %}</a>
+                            <span>Rooms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Room Details Section Begin -->
+    <section class="room-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="room-details-item">
+                        <img src="{{ rooms.img.url }}" alt="">
+                        <div class="rd-text">
+                            <div class="rd-title">
+                                <h3>{{ rooms.name }}</h3>
+                                <div class="rdt-right">
+                                    <p>{{ rooms.queryset }}</p>
+                                </div>
+                            </div>
+                            <h2>{{ rooms.cost }}$<span>/{% trans 'Сутки' %}</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Размер' %}:</td>
+                                        <td>{{ rooms.size }} ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Емкость' %}:</td>
+                                        <td>{% trans 'Кол-во людей' %} {{ rooms.capacity }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Кровать' %}:</td>
+                                        <td>{{ rooms.bed }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">{% trans 'Сервисы' %}:</td>
+
+                                        <td>{% for service in rooms.services.all %}
+                                            {{ service.name }},
+                                            {% endfor %}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="f-para">{{ rooms.description }}</p>
+                            <h2 id="rooms__data">asdasd</h2>
+                            <script>
+                                async function fetchData()
+                                {
+                                    const response = await fetch('http://localhost:8000/api/rooms', {
+                                        headers: {
+                                            'Content-Type': "application/json",
+                                            'Accept': "application/json"
+                                        }
+                                    });
+                                    const responseData = await response.json()
+                                    console.log(responseData.foo);
+                                    document.querySelector('#rooms__data').innerHTML = responseData.foo;
+                                }
+                                fetchData();
+                            </script>
+                        </div>
+                        <form action="{% url 'add_rating' %}" method="post" name="rating">
+                                    <b>{% trans 'Ваш рейтинг' %}:</b>
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{ rooms.id }}" name="rooms">
+                                    <div class="rating" style="display:inline-block;">
+                                            {% for k, v in star_form.fields.star.choices %}
+                                                <input  class="icon_star" id="rating{{ v }}" type="radio" name="star" value="{{ k }}" style="width: 13%;height: 0px;">
+                                            {% endfor %}
+                                    </div>
+                                </form>
+                    </div>
+                    <div class="rd-reviews">
+                        <h4>{% trans 'Отзывы' %}</h4>
+                        {% for review in rooms.get_review %}
+                        <div class="review-item">
+                            <div class="ri-pic">
+                                <img src="{% static 'img/room/avatar/avatar-1.jpg' %}" alt="">
+                            </div>
+                            <div class="ri-text">
+                                <span>{{ review.date }}</span>
+                                <h5>{{ review.name }}</h5>
+                                <p>{{ review.text }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="review-add">
+                        <h4>{% trans 'Добавить отзыв' %}</h4>
+                        <form action="{% url 'room_add_review' rooms.id %}" class="ra-form" method="post" id="ReviewForm">
+                            {% csrf_token %}
+                        <input type="hidden" name="parent" id="contactparent" value="">
+
+                            <div class="row">
+                                <div class="col-lg-6" >
+                                    <input type="text" name="name" placeholder="{% trans 'Имя' %}*">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" name="email" placeholder="Email*">
+                                </div>
+                                <div class="col-lg-12">
+
+                                    <textarea placeholder="{% trans 'Ваш отзыв' %}" name="text" id="contactcomment"></textarea>
+                                    <button type="submit">{% trans 'Нажмите сюда' %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="room-booking">
+                        <h3>{% trans 'Ваша резервация' %}</h3>
+                            <button type="button" style="display: block;border: 1px solid #dfa974;border-radius: 2px;font-weight: 500;background: transparent;width: 100%; height: 46px;
+                            margin-top: 30px;">
+                                <a style="font-size: 14px;text-transform: uppercase;color: #dfa974;" href="{% url 'contact_room' rooms.url %}">{% trans 'Нажмите сюда' %}!</a>
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    function AddReviewRoom(name, id) {
+        document.getElementById("contactparent").value = id;
+        document.getElementById("contactcomment").innerText =`${name}, `
+    }
+
+    // Add star rating
+const rating = document.querySelector('form[name=rating]');
+
+rating.addEventListener("change", function (e) {
+    // Получаем данные из формы
+    let data = new FormData(this);
+    fetch(`${this.action}`, {
+        method: 'POST',
+        body: data
+    })
+        .then(response => alert("Рейтинг установлен"))
+        .catch(error => alert("Ошибка"))
+});
+</script>
+
+
+{% endblock %}

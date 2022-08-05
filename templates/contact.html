@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block menu %}
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li ><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li class="active"><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-text">
+                        <h2>{% trans 'Контактная информация' %}</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">{% trans 'Адресс' %}:</td>
+                                    <td>856 Cordia Extension Apt. 356, Lake, US</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans 'Телефон' %}:</td>
+                                    <td>(12) 345 67890</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans 'Емаил' %}:</td>
+                                    <td>info.colorlib@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans 'Факс' %}:</td>
+                                    <td>+(12) 345 67890</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-7 offset-lg-1">
+                    <form action="{% url 'contact_send_email' %}" class="contact-form" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="{% trans 'Ваше имя' %} " name="name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="{% trans 'Ваш емаил' %} " name="email">
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea placeholder="{% trans 'Ваше сообщение' %} " name="message"></textarea>
+                                <button type="submit">{% trans 'Нажмите сейчас' %}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+{% endblock %}

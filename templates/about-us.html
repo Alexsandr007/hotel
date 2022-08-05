@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block menu %}
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li ><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li class="active"><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>{% trans 'О нас' %}</h2>
+                        <div class="bt-option">
+                            <a href="./index.html">{% trans 'Главная' %}</a>
+                            <span>{% trans 'О нас' %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- About Us Page Section Begin -->
+    <section class="aboutus-page-section spad">
+        <div class="container">
+            <div class="about-page-text">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ap-title">
+                            <h2>{% trans 'Добро пожаловать в отель' %}</h2>
+                            <p>{% trans 'Этот отель, построенный в 1910 году в период Прекрасной эпохи, расположен в центре город Париж, откуда легко добраться до туристических достопримечательностей города. Предлагает со вкусомдекорированные комнаты.' %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1">
+                        <ul class="ap-services">
+                            <li><i class="icon_check"></i>{% trans 'Скидка 20% на проживание' %} </li>
+                            <li><i class="icon_check"></i>{% trans 'Бесплатный ежедневный завтрак' %} </li>
+                            <li><i class="icon_check"></i>{% trans '3 стирки в день' %}</li>
+                            <li><i class="icon_check"></i>{% trans 'Бесплатный вай фай' %}</li>
+                            <li><i class="icon_check"></i>{% trans 'Скидка 20% на сервисы от Ф и Б' %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about-page-services">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="ap-service-item set-bg" data-setbg="{% static 'img/about/about-p1.jpg' %}">
+                            <div class="api-text">
+                                <h3>{% trans 'Ресторанные сервисы' %}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ap-service-item set-bg" data-setbg="{% static 'img/about/about-p2.jpg' %}">
+                            <div class="api-text">
+                                <h3>{% trans 'Поездки и путешествия' %}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ap-service-item set-bg" data-setbg="{% static 'img/about/about-p3.jpg' %}">
+                            <div class="api-text">
+                                <h3>{% trans 'События и вечеринки' %}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Page Section End -->
+
+    <!-- Video Section Begin -->
+    <section class="video-section set-bg" data-setbg="{% static 'img/video-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-text">
+                        <h2>{% trans 'Откройте для себя наш отель и услуги' %}.</h2>
+                        <p>{% trans 'Сейчас сезон ураганов, но мы едем на остров Хилтон-Хед' %}</p>
+                        <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><img
+                                src="{ static 'img/play.png' }" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video Section End -->
+
+
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block menu %}
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li ><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li class="active"><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Blog Details Hero Section Begin -->
+    <section class="blog-details-hero set-bg" data-setbg="{% static 'img/blog/blog-details/blog-details-hero.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="bd-hero-text">
+                        <span>{% trans 'Путешествия поездки и кемпинг' %}</span>
+                        <h2>{% trans 'Cdc выпускает уведомление о состоянии здоровья для путешественников в США из Hon' %}</h2>
+                        <ul>
+                            <li class="b-time"><i class="icon_clock_alt"></i> 15 {% trans 'Апрель' %}, 2019</li>
+                            <li><i class="icon_profile"></i> {% trans 'Керри Джонс' %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Hero End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="blog-details-text">
+                        <div class="bd-title">
+                            <p>{{ news.text_state|safe }}</p>
+                        </div>
+                        <div class="bd-pic">
+                            {% for image in news.newsshots_set.all %}
+                            <div class="bp-item">
+                                <img src="{{ image.image.url }}" alt="">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="bd-more-text">
+                             {% for image_text in news.newsshots_set.all %}
+                            <div class="bm-item">
+                                <h4>{{ image_text.title }}</h4>
+                                <p>{{ image_text.description }}</p>
+                            </div>
+                            {% endfor %}
+                        <div class="comment-option">
+                            <h4>{{ news.newsreviews_set.count }}{% trans ' Комментарии' %}</h4>
+                             {% for review in news.get_review %}
+                            <div class="single-comment-item first-comment">
+                                <div class="sc-author">
+                                    <img src="{% static 'img/blog/blog-details/avatar/avatar-1.jpg' %}" alt="">
+                                </div>
+                                <div class="sc-text">
+                                    <span>{{ review.date }}</span>
+                                    <h5>{{ review.name }}</h5>
+                                    <p>{{ review.text }}</p>
+                                    <a href="#NewsReviewForm" onclick="AddReviewNews('{{ review.name }}', '{{ review.id }}')" class="comment-btn">Reply</a>
+                                </div>
+                            </div>
+                            {% for rew in review.newsreviews_set.all %}
+                            <div class="single-comment-item reply-comment">
+                                <div class="sc-author">
+                                    <img src="{% static 'img/blog/blog-details/avatar/avatar-2.jpg' %}" alt="">
+                                </div>
+                                <div class="sc-text">
+                                    <span>{{ rew.date }}</span>
+                                    <h5>{{ rew.name }}</h5>
+                                    <p>{{ rew.text }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="leave-comment" style="margin-top: 130px;">
+                            <h4>{% trans 'Написать комментарий' %}</h4>
+                            <form action="{% url 'news_add_review' news.id %}" class="comment-form" method="post" id="NewsReviewForm">
+                                {% csrf_token %}
+                                <input type="hidden" name="parent" id="contactparent" value="">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" placeholder="{% trans 'Имя' %}" name="name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" placeholder="{% trans 'Емаил' %}" name="email">
+                                    </div>
+                                    <div class="col-lg-12 text-center">
+                                        <textarea placeholder="{% trans 'Сообщение' %}" name="text" id="contactcomment"></textarea>
+                                        <button type="submit" class="site-btn">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+
+
+<script>
+    function AddReviewNews(name, id) {
+        document.getElementById("contactparent").value = id;
+        document.getElementById("contactcomment").innerText =`${name}, `
+    }
+</script>
+
+{% endblock %}

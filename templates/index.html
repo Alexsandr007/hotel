@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+{% block menu %}
+                                <ul>
+                                    <li class="active"><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
+                                    <li ><a href="{% url 'rooms' %}">{% trans 'Комнаты' %}</a></li>
+                                    <li><a href="{% url 'about_us' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакты' %}</a></li>
+                                </ul>
+
+{% endblock %}
+{% block content %}
+
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-text">
+                        <h1>{% trans 'Сона А Роскошный Отель' %}</h1>
+                        <p>{% trans 'Вот лучшие сайты бронирования отелей, включая рекомендации для международных путешествия и поиск недорогих гостиничных номеров.' %}</p>
+                        <a href="{% url 'news' %}" class="primary-btn">{% trans 'Откройте для себя сейчас' %}</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+                    <div class="booking-form">
+                        <h3>{% trans 'Бронирование вашего отеля' %}</h3>
+                        <form action="{% url 'rooms' %}"><button type="submit"><a>{% trans 'Проверять наличие' %}</a></button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg"style="background-image: url({% static 'img/hero/hero-1.jpg' %});"></div>
+            <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-2.jpg' %}"></div>
+            <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-3.jpg' %}"></div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span>{% trans 'О нас' %}</span>
+                            <h2>{% trans 'Межконтинентальный Лос-Анджелес' %} <br />{% trans 'Вестлейк Отель' %}</h2>
+                        </div>
+                        <p class="f-para">{% trans 'Sona.com - ведущий сайт онлайн-размещения. Мы увлечены путешествовать. Каждый день мы вдохновляем и привлекаем миллионы путешественников на 90 местных сайтах в 41 стране. языков.' %}</p>
+                        <p class="s-para">{% trans 'Итак, когда дело доходит до бронирования идеального отеля, аренды на время отпуска, курорта, квартира, гостевой дом или домик на дереве, мы вам поможем.' %}</p>
+                        <a href="{% url 'news' %}" class="primary-btn about-btn">{% trans 'Читать дальше' %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{% static 'img/about/about-1.jpg' %}" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="{% static 'img/about/about-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Home Room Section Begin -->
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+                    {% for room in rooms %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="{{ room.img.url }}">
+                            <div class="hr-text">
+                                <h3>{{ room.name }}</h3>
+                                <h2>{{ room.cost }}$<span>/{% trans 'За сутки' %}</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">{% trans 'Размер' %}:</td>
+                                            <td>{{ room.size }} ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">{% trans 'Емкость' %}:</td>
+                                            <td>Max persion {{ room.capacity }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">{% trans 'Кровать' %}:</td>
+                                            <td>{{ room.bed }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">{% trans 'Сервисы' %}:</td>
+                                            <td>{% for service in room.services.all|slice:"2" %}
+                                            {{ service.name }},
+                                            {% endfor %}<a>...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="{{ room.get_absolute_url }}" class="primary-btn">{% trans 'Контакты' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Room Section End -->
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>{% trans 'Отзывы' %}</span>
+                        <h2>{% trans 'Что говорят клиенты?' %}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="testimonial-slider owl-carousel">
+                        <div class="ts-item">
+                            <p>{% trans 'После того, как строительный проект занял больше времени, чем ожидалось, мой муж, моя дочь и я нужно место, чтобы остаться на несколько ночей. Как жители Чикаго, мы много знаем о наших город, район и типы доступных вариантов жилья, и нам очень нравится наш отдых в отеле "Сона".' %}</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - {% trans 'Александр Васкес' %}</h5>
+                            </div>
+                            <img src="{% static 'img/testimonial-logo.png' %}" alt="">
+                        </div>
+                        <div class="ts-item">
+                            <p>{% trans 'После того, как строительный проект занял больше времени, чем ожидалось, мой муж, моя дочь и я нужно место, чтобы остаться на несколько ночей. Как жители Чикаго, мы много знаем о наших город, район и типы доступных вариантов жилья, и нам очень нравится наш отдых в отеле "Сона".' %}</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - {% trans 'Александр Васкес' %}</h5>
+                            </div>
+                            <img src="{% static 'img/testimonial-logo.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>{% trans 'Новости отеля' %}</span>
+                        <h2>{% trans 'О блоге и событиях' %}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for item in news %}
+                <div class="col-lg-4">
+                    <div class="blog-item set-bg" data-setbg="{{ item.image.url }}">
+                        <div class="bi-text">
+                            <h4><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i>{{ item.date }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section End -->
+
+
+{% endblock %}
