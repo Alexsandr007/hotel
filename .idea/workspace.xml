@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caba0770-a37e-4920-b0e9-3f7f1f98d382" name="Changes" comment="" />
+    <list default="true" id="caba0770-a37e-4920-b0e9-3f7f1f98d382" name="Changes" comment="full course project">
+      <change beforePath="$PROJECT_DIR$/.idea/hotel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hotel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel_list/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel_list/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../hotel-master/hotel-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -191,7 +196,10 @@
       <workItem from="1652768701055" duration="269000" />
       <workItem from="1652774815087" duration="1060000" />
       <workItem from="1652783556197" duration="665000" />
-      <workItem from="1659717359210" duration="1112000" />
+      <workItem from="1659717359210" duration="1502000" />
+      <workItem from="1659798637315" duration="132000" />
+      <workItem from="1660163068828" duration="1201000" />
+      <workItem from="1660164302574" duration="649000" />
     </task>
     <servers />
   </component>
@@ -208,5 +216,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

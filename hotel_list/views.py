@@ -25,6 +25,7 @@ class RoomsView(ListView):
     paginate_by = 1
     model = Rooms
     queryset = Rooms.objects.filter(reservaton=False)
+    ordering = ['cost']
     template_name = "rooms.html"
 
 
@@ -70,6 +71,7 @@ class NewsView(ListView):
     paginate_by = 1
     model = News
     queryset = News.objects.all()
+    ordering = ['-id']
     template_name = "news.html"
 
 
